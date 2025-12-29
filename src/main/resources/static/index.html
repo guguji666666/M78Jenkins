@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUTS CI/CD Terminal | 迪迦与八兄弟</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #020617;
+            color: #f8fafc;
+            background-image:
+                    radial-gradient(circle at 20% 30%, #1e1b4b 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, #312e81 0%, transparent 50%);
+            min-height: 100vh;
+        }
+        /* 迪迦能量指示灯 */
+        .color-timer {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #00d2ff;
+            box-shadow: 0 0 20px #00d2ff, inset 0 0 8px #fff;
+            animation: breathe 2s infinite alternate;
+        }
+        @keyframes breathe {
+            from { opacity: 0.6; transform: scale(0.9); box-shadow: 0 0 10px #00d2ff; }
+            to { opacity: 1; transform: scale(1.1); box-shadow: 0 0 25px #00d2ff; }
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tiga-gradient-text {
+            background: linear-gradient(to right, #818cf8, #f87171, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="border-b border-white/10 py-4 px-6 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="color-timer"></div>
+            <h1 class="text-xl font-black tracking-widest italic">TPC <span class="text-indigo-400">ARCHIVE</span></h1>
+        </div>
+        <div class="flex gap-4">
+            <span class="text-[10px] bg-red-600 px-2 py-1 rounded font-bold animate-pulse">DEFENSE LEVEL: S</span>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-6xl mx-auto p-6 mt-4">
+
+    <div class="glass-card rounded-3xl overflow-hidden mb-8 shadow-2xl">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-2/5 p-6 flex justify-center bg-gradient-to-b from-indigo-900/20 to-transparent">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/17939805049370008050_2"
+                     alt="Ultraman Tiga"
+                     class="h-80 w-auto object-contain drop-shadow-[0_0_35px_rgba(99,102,241,0.6)]">
+            </div>
+
+            <div class="lg:w-3/5 p-8">
+                <div class="mb-6">
+                    <p class="text-indigo-400 font-mono text-sm mb-1">>> SYSTEM INITIALIZING...</p>
+                    <h2 class="text-4xl font-black mt-2 tiga-gradient-text">
+                        Jenkins 自动化部署终端
+                    </h2>
+                </div>
+
+                <div class="bg-black/30 p-4 rounded-xl mb-6 border border-white/5 font-mono text-xs">
+                    <p class="mb-1 text-gray-400">GITHUB REPO: <span class="text-white">https://github.com/ultra-tiga/project-victory</span></p>
+                    <p class="text-gray-400">LAST SYNC: <span class="text-green-400">SUCCESS - 2025.12.28 20:43</span></p>
+                </div>
+
+                <button class="group relative w-full overflow-hidden bg-indigo-600 px-8 py-4 rounded-xl font-black transition-all hover:bg-indigo-500 active:scale-95 shadow-lg shadow-indigo-500/20">
+                    <span class="relative z-10 text-lg tracking-widest">相信光，启动构建！</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-baseline gap-2">
+        <h3 class="text-xl font-bold italic text-gray-300 tracking-tighter uppercase">Ultra Pipeline</h3>
+        <span class="text-[10px] text-gray-500">M78-GALAXY CLOUD SERVICE</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+        <div class="glass-card p-5 rounded-2xl border-l-4 border-indigo-400">
+            <div class="text-indigo-400 text-[10px] font-bold mb-2 tracking-widest">STAGE 01</div>
+            <h4 class="font-bold mb-1">代码拉取</h4>
+            <div class="text-[10px] text-gray-500 font-mono">PULLING FROM NEBULA...</div>
+            <div class="mt-4 text-xs font-bold text-green-400 font-mono">✓ READY</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border-l-4 border-red-400">
+            <div class="text-red-400 text-[10px] font-bold mb-2 tracking-widest">STAGE 02</div>
+            <h4 class="font-bold mb-1">安全防御扫描</h4>
+            <div class="text-[10px] text-gray-500 font-mono">SCANNING KAIJU VIRUS...</div>
+            <div class="mt-4 h-1 bg-gray-800 rounded-full">
+                <div class="h-full bg-red-500 w-3/4 animate-pulse"></div>
+            </div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border-l-4 border-yellow-400">
+            <div class="text-yellow-400 text-[10px] font-bold mb-2 tracking-widest">STAGE 03</div>
+            <h4 class="font-bold mb-1">Docker 封装</h4>
+            <div class="text-[10px] text-gray-500 font-mono">ARMOR EQUIPPING...</div>
+            <div class="mt-4 text-xs font-bold text-gray-600 font-mono italic">PENDING</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border-l-4 border-blue-400">
+            <div class="text-blue-400 text-[10px] font-bold mb-2 tracking-widest">STAGE 04</div>
+            <h4 class="font-bold mb-1">跨空间部署</h4>
+            <div class="text-[10px] text-gray-500 font-mono">TO MAC MINI SECTOR...</div>
+            <div class="mt-4 text-xs font-bold text-gray-600 font-mono italic">WAITING</div>
+        </div>
+    </div>
+
+    <div class="relative w-full h-48 rounded-3xl overflow-hidden glass-card">
+        <img src="http://googleusercontent.com/image_collection/image_retrieval/11811688917724023825_0"
+             alt="Ultra 8 Brothers"
+             class="w-full h-full object-cover opacity-50 transition-opacity hover:opacity-100 duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+            <p class="text-xs font-bold tracking-[0.5em] text-white/60">大决战！超奥特 8 兄弟</p>
+        </div>
+    </div>
+
+</main>
+
+<footer class="mt-12 py-8 text-center border-t border-white/5">
+    <p class="text-gray-600 font-mono text-[10px] tracking-widest uppercase">
+        Powering Mac mini Lab | Secure CI/CD System v2.0
+    </p>
+</footer>
+
+<style>
+    @keyframes shimmer {
+        100% { transform: translateX(100%); }
+    }
+</style>
+
+</body>
+</html>
